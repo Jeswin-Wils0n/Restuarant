@@ -1,0 +1,221 @@
+.navigation{
+    position: relative;
+    z-index: 200;
+    &-bar{
+        // position: fixed;
+        display: flex;
+        // width: 100vw;
+        // height: 100vh;
+        // z-index: -20;
+        // transition: z-index .1s .5s;
+    
+        &-left{
+            background-color: $color-dark;
+            width: 50vw;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            left: -50vw;
+            transition: left .6s cubic-bezier(1, 0, 0, 1);
+        }
+        &-right{
+            position: fixed;
+            right:-50vw;
+            width: 50vw;
+            height: 100vh;
+            background-color: darken($color-dark,5);
+            @include flexLayout;
+            transition: right .6s cubic-bezier(1, 0, 0, 1);
+    
+            &-list{
+                @include flexLayout;
+                flex-direction: column;
+                &Item{
+                    color: $color-secondary;
+                    list-style: none;
+                    font-family: $font-dancingScript;
+                    font-size: 50px;
+                    margin: 10px 0;
+                    @include textStyles(capitalize);
+                    transition: all .7s;
+                    cursor: pointer;
+    
+                    &:hover{
+                        letter-spacing: 4px;
+                        color: $color-primary;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+// .checkbox:checked ~ .navigation-bar{
+//     z-index: 20;
+// }
+.checkbox:checked ~ .navigation-bar>.navigation-bar-left{
+    left: 0;
+}
+.checkbox:checked ~ .navigation-bar>.navigation-bar-right{
+    right: 0;
+}
+.checkbox:checked ~ .hamburger-menu {
+    transform: rotateZ(90deg);
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-1{
+transform: rotateZ(-45deg);
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-2{
+    opacity: 0;
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-3{
+    transform: rotateZ(45deg);
+}
+
+
+
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba($color-black,0.8), rgba($color-black,.6)), url(../images/bg.jpeg) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // position: relative;
+    .brand{
+    align-items: center;
+    display: flex;
+    @include centering(15%);
+    }
+
+    &-banner{
+    @include centering(50%);
+    margin-top: 10px;
+    text-align:center;
+    }
+
+}
+.about-us{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    &-left{
+        width: 40%;
+        position: relative;
+        left: -200px;
+        img{
+            width: 100%;
+            opacity: .7;
+        }
+    }
+    &-right{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 100px;
+        box-sizing: border-box;
+        .stars{
+            margin: 30px 0;
+        }
+        .description{
+            color: $color-secondary;
+            font-size: 25px;
+            font-style: italic;
+            font-family: $font-josefinSans;
+            text-align: justify;
+            &::first-letter{
+                padding-left: 40px;
+            }
+        }
+    }
+}
+.gallery{
+    // overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.card {
+    position: relative;
+    overflow: hidden;
+    
+    img{
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    object-fit: cover;
+    z-index: 2;
+    }
+    &-overlay{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-white;
+        background-color: rgba($color-primary, .6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        transition: left .5s;
+        z-index: 3;
+        &-foodItem{
+            font-style: $font-nunito;
+            // text-transform: capitalize;
+            font-size: 50px;
+            margin-top: 115px;
+            margin-bottom: 10px;
+            @include textStyles(capitalize)
+        }
+        &-price{
+            font-family: $font-josefinSans;
+            font-size: 30px;
+            margin-bottom: 30px;
+            @include textStyles(capitalize)
+            // margin-bottom: 50px;
+        }
+        &-btn{
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            border: solid $color-primary 1px;
+            color: darken($color-primary,10);
+            cursor: pointer;
+            font-weight: bold;
+            @include textStyles(capitalize)
+        }
+    }
+    &:hover &-overlay{
+            left: 0;
+        
+    }
+}
+
+.footer{
+    margin: 60px 0;
+    &-header{
+        @include flexLayout;
+
+    }
+    &-social-media{
+        // width:50%;
+        margin: 60px 0;
+        @include flexLayout;
+
+    }
+    &-copyright{
+        @include flexLayout;
+        &-paragraph{
+            font-family: $font-josefinSans;
+            color: $color-secondary;
+            @include textStyles(capitalize);
+
+        }
+    }
+}

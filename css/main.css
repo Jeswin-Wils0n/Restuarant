@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #272626; }
+
+.navigation {
+  position: relative;
+  z-index: 200; }
+  .navigation-bar {
+    display: flex; }
+    .navigation-bar-left {
+      background-color: #272626;
+      width: 50vw;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      left: -50vw;
+      transition: left 0.6s cubic-bezier(1, 0, 0, 1); }
+    .navigation-bar-right {
+      position: fixed;
+      right: -50vw;
+      width: 50vw;
+      height: 100vh;
+      background-color: #1a1919;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.6s cubic-bezier(1, 0, 0, 1); }
+      .navigation-bar-right-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        .navigation-bar-right-listItem {
+          color: #bbb;
+          list-style: none;
+          font-family: "Dancing Script", cursive;
+          font-size: 50px;
+          margin: 10px 0;
+          font-weight: 300;
+          letter-spacing: 2px;
+          text-transform: capitalize;
+          transition: all .7s;
+          cursor: pointer; }
+          .navigation-bar-right-listItem:hover {
+            letter-spacing: 4px;
+            color: #d3ab55; }
+
+.checkbox:checked ~ .navigation-bar > .navigation-bar-left {
+  left: 0; }
+
+.checkbox:checked ~ .navigation-bar > .navigation-bar-right {
+  right: 0; }
+
+.checkbox:checked ~ .hamburger-menu {
+  transform: rotateZ(90deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotateZ(-45deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0; }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotateZ(45deg); }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(../images/bg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .header .brand {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .header-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    text-align: center; }
+
+.about-us {
+  height: 90vh;
+  display: flex;
+  align-items: center; }
+  .about-us-left {
+    width: 40%;
+    position: relative;
+    left: -200px; }
+    .about-us-left img {
+      width: 100%;
+      opacity: .7; }
+  .about-us-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 100px;
+    box-sizing: border-box; }
+    .about-us-right .stars {
+      margin: 30px 0; }
+    .about-us-right .description {
+      color: #bbb;
+      font-size: 25px;
+      font-style: italic;
+      font-family: "Josefin Sans", sans-serif;
+      text-align: justify; }
+      .about-us-right .description::first-letter {
+        padding-left: 40px; }
+
+.gallery {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; }
+
+.card {
+  position: relative;
+  overflow: hidden; }
+  .card img {
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    object-fit: cover;
+    z-index: 2; }
+  .card-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(211, 171, 85, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    transition: left .5s;
+    z-index: 3; }
+    .card-overlay-foodItem {
+      font-style: "Nunito", sans-serif;
+      font-size: 50px;
+      margin-top: 115px;
+      margin-bottom: 10px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+    .card-overlay-price {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+    .card-overlay-btn {
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
+      border: solid #d3ab55 1px;
+      color: #c39532;
+      cursor: pointer;
+      font-weight: bold;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+  .card:hover .card-overlay {
+    left: 0; }
+
+.footer {
+  margin: 60px 0; }
+  .footer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .footer-social-media {
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .footer-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .footer-copyright-paragraph {
+      font-family: "Josefin Sans", sans-serif;
+      color: #bbb;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+
+.left-img {
+  width: 50%;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(211, 171, 85, 0.5);
+  opacity: .7; }
+  .left-img-1 {
+    top: 15%;
+    left: 15%; }
+  .left-img-2 {
+    top: 35%;
+    left: 25%; }
+  .left-img-3 {
+    top: 55%;
+    left: 35%; }
+
+.hamburger-menu {
+  z-index: 30;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 7%;
+  right: 35px;
+  transition: all .5s; }
+  .hamburger-menu .menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer; }
+    .hamburger-menu .menu-line {
+      width: 100%;
+      height: 4px;
+      background-color: #d3ab55;
+      transition: all .5s .5s;
+      transform-origin: right; }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d3ab55;
+  font-size: 70px;
+  border: solid #d3ab55 2px;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  margin-right: 20px; }
+
+.main-name {
+  font-family: "Nunito", sans-serif;
+  font-size: 50px;
+  color: #bbb;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.sub-name {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  color: #bbb;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.main-heading {
+  font-weight: 300;
+  font-size: 100px;
+  font-family: "Dancing Script", cursive;
+  color: #d3ab55;
+  margin-bottom: 40px; }
+
+.sub-heading {
+  font-weight: 300;
+  font-size: 60px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #bbb;
+  margin-bottom: 80px;
+  text-align: center; }
+
+.main-btn {
+  width: 170px;
+  height: 45px;
+  background-color: transparent;
+  color: #d3ab55;
+  border: 1px solid #d3ab55;
+  font-family: "Josefin Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  .main-btn:hover {
+    color: #272626;
+    background-color: #d3ab55; }
+
+.star {
+  color: #d3ab55;
+  margin-left: 10px;
+  font-size: 15px; }
+
+.social-media {
+  width: 320px;
+  display: flex;
+  justify-content: space-between; }
+  .social-media-item {
+    list-style: none;
+    font-size: 50px; }
+  .social-media-link {
+    text-decoration: none;
+    color: #bbb;
+    transition: color .5s; }
+    .social-media-link:hover {
+      color: #d3ab55; }

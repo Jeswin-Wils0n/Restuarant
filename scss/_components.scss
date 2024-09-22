@@ -1,0 +1,132 @@
+.left-img{
+    width: 50%;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba($color-primary, .5);
+    opacity: .7;
+    &-1{
+        top:15%;
+        left: 15%;
+    }
+    &-2{
+        top:35%;
+        left: 25%;
+    }
+    &-3{
+        top:55%;
+        left: 35%;
+    }
+
+}
+.hamburger-menu{
+    z-index: 30;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 7%;
+    right: 35px;
+    transition: all .5s;
+    .menu{
+        // @include flexLayout;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+
+        &-line{
+            width: 100%;
+            height: 4px;
+            background-color: $color-primary;
+            transition: all .5s .5s;
+            transform-origin: right;
+            // cursor: pointer;
+
+        }
+    }
+}
+
+
+.logo {
+    @include flexLayout;
+    color: $color-primary;
+    font-size: 70px;
+    border: solid $color-primary 2px;
+    border-radius: 50%;
+    width:110px;
+    height: 110px;
+    margin-right: 20px;
+}
+.main-name{
+    font-family: $font-nunito;
+    font-size: 50px;
+    color: $color-secondary;
+    @include textStyles
+}
+.sub-name{
+    font-family: $font-josefinSans;
+    font-size: 20px;
+    color: $color-secondary;
+    text-align: center;
+    @include textStyles
+
+}
+.main-heading{
+    font-weight: 300;
+    font-size: 100px;
+    font-family: $font-dancingScript;
+    color: $color-primary;
+    margin-bottom: 40px;
+}
+.sub-heading{
+    font-weight: 300;
+    font-size: 60px;
+    font-family: $font-josefinSans;
+    color: $color-secondary;
+    margin-bottom: 80px;    
+    text-align: center;
+}
+.main-btn{
+    width: 170px;
+    height: 45px;
+    background-color: transparent;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    font-family: $font-josefinSans;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:hover{
+        color: $color-dark;
+        background-color: $color-primary;
+    }
+}
+.star{
+    color: $color-primary;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.social-media{
+    // @include flexLayout;
+    width: 320px;
+    display: flex;
+    justify-content:space-between;
+    // align-content: center;
+    &-item{
+        list-style: none;
+        font-size: 50px;
+        
+
+    }
+    &-link{
+        text-decoration: none;
+        color: $color-secondary;
+        transition: color .5s;
+        &:hover{
+            color: $color-primary;
+        }
+    }
+}
